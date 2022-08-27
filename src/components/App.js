@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import Header from './Header';
 import callToApi from '../services/callToApi';
+import CharactersList from './CharactersList';
 const App = () => {
   const [dataCharacters, setDataCharacters] = useState([]);
 
@@ -19,14 +20,9 @@ const App = () => {
         <Route
           path="/"
           element={
-            <main>
+            <main className="main">
               <section>Filters</section>
-              <ul>
-                Character List
-                <li>
-                  <Link to="/characterDetail">Character Card </Link>
-                </li>
-              </ul>
+              <CharactersList dataCharacters={dataCharacters} />
             </main>
           }
         />

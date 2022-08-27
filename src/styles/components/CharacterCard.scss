@@ -1,0 +1,30 @@
+@import '../core/variables.scss';
+
+.card {
+  background-color: $colorGold;
+
+  &__img {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+  }
+
+  &__title {
+    line-height: 2em;
+    color: white;
+    text-align: center;
+    text-transform: capitalize;
+
+  }
+
+  &__description {
+    line-height: 2em;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    text-transform: capitalize;
+
+  }
+
+
+}
