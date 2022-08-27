@@ -1,15 +1,14 @@
-import '../styles/layout/App.scss';
+import '../styles/App.scss';
 import { Routes, Route } from 'react-router-dom';
+import Header from './Header';
 const App = () => {
   return (
     <>
-      <header>
-        <h1>Harry Potter</h1>
-      </header>
+      <Header />
+
       <main>
         <section> Filter</section>
         <ul>
-          {' '}
           Character List
           <li>Character Card</li>
         </ul>
