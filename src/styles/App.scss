@@ -1,2 +1,10 @@
 @import './core/variables.scss';
 @import './core/reset.scss';
+
+.container {
+  height: 80vh;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
