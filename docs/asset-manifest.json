@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "./static/css/main.3f6a530a.css",
+    "main.js": "./static/js/main.7d1f0ec6.js",
+    "static/media/Harry-Potter.ttf": "./static/media/Harry-Potter.a65869c0c1a4b3d4fcfc.ttf",
+    "index.html": "./index.html",
+    "main.3f6a530a.css.map": "./static/css/main.3f6a530a.css.map",
+    "main.7d1f0ec6.js.map": "./static/js/main.7d1f0ec6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3f6a530a.css",
+    "static/js/main.7d1f0ec6.js"
+  ]
+}
