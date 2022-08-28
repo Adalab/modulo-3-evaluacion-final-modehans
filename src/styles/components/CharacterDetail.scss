@@ -1,0 +1,23 @@
+@import '../core/variables.scss';
+
+
+
+.cardDetail {
+  width: 80%;
+}
+
+.gryffindor {
+  background-color: #800000;
+}
+
+.slytherin {
+  background-color: rgb(13, 61, 13);
+}
+
+.hufflepuff {
+  background-color: $colorGold;
+}
+
+.ravenclaw {
+  background-color: rgb(29, 29, 88);
+}

@@ -1,13 +1,14 @@
 import '../styles/App.scss';
 import { useEffect, useState } from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, matchPath, useLocation } from 'react-router-dom';
 
 import callToApi from '../services/callToApi';
 import localStorage from '../services/localStorage';
 
 import Header from './Header';
-import CharactersList from './CharactersList';
 import Filters from './Filters';
+import CharactersList from './CharactersList';
+import CharacterDetail from './CharacterDetail';
 import Loader from './Loader';
 
 const App = () => {
@@ -27,6 +28,7 @@ const App = () => {
   const handleFilterName = (inputValue) => {
     setUserFilterName(inputValue);
   };
+
   const handleFilterHouse = (inputValue) => {
     setUserFilterHouse(inputValue);
   };
@@ -53,35 +55,41 @@ const App = () => {
     <CharactersList dataCharacters={dataUser} />
   );
 
+  const { pathname } = useLocation();
+  console.log(pathname);
+  const dataPath = matchPath('/characterDetail/:id', pathname);
+  console.log(dataPath);
+  const characterId = dataPath !== null ? dataPath.params.id : null;
+  const characterSelect = dataCharacters.find(
+    (item) => item.id === parseInt(characterId)
+  );
+
   return (
     <div className="container">
       <Header />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <main className="main">
-              <Filters
-                userFilterName={userFilterName}
-                handleFilterName={handleFilterName}
-                userFilterHouse={userFilterHouse}
-                handleFilterHouse={handleFilterHouse}
-              />
-              {renderLoadOrCharacters}
-            </main>
-          }
-        />
+      <main className="main">
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Filters
+                  userFilterName={userFilterName}
+                  handleFilterName={handleFilterName}
+                  userFilterHouse={userFilterHouse}
+                  handleFilterHouse={handleFilterHouse}
+                />
+                {renderLoadOrCharacters}
+              </>
+            }
+          />
 
-        <Route
-          path="/characterDetail"
-          element={
-            <main>
-              <Link to="/">Volver</Link>
-              <div>Character Detail </div>
-            </main>
-          }
-        />
-      </Routes>
+          <Route
+            path="/characterDetail/:id"
+            element={<CharacterDetail character={characterSelect} />}
+          />
+        </Routes>
+      </main>
     </div>
   );
 };
