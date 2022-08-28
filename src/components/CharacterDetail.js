@@ -6,8 +6,10 @@ const CharacterDetail = (props) => {
   const colorOfHouse = props.character.house.toLowerCase();
   console.log(colorOfHouse);
   return (
-    <section className="section">
-      <Link to={'/'}>Volver</Link>
+    <section className="sectionCardDetail">
+      <Link to={'/'} className="sectionCardDetail__link">
+        Volver
+      </Link>
       <article className={`cardDetail ${colorOfHouse}`}>
         <img
           className="cardDetail__img"
@@ -15,14 +17,17 @@ const CharacterDetail = (props) => {
           alt={`Foto de ${props.character.image}`}
           title={`Foto de ${props.character.image}`}
         />
-        <h2 className="cardDetail__title">{props.character.name}</h2>
-        <p className="cardDetail__description">{props.character.house}</p>
-        <p className="cardDetail__description">{props.character.alive}</p>
-        <p className="cardDetail__description">{props.character.genere}</p>
-        <p className="cardDetail__description">{props.character.species}</p>
-        <p className="cardDetail__description">
-          {props.character.alternative_names}
-        </p>{' '}
+
+        <section>
+          <h2 className="cardDetail__title">{props.character.name}</h2>
+          <p className="cardDetail__description">{`Casa: ${props.character.house}`}</p>
+          <p className="cardDetail__description">{`Estatus: ${
+            props.character.alive ? 'Viva ♥' : 'Muerta ☠'
+          }`}</p>
+          <p className="cardDetail__description">{`Género: ${props.character.gender}`}</p>
+          <p className="cardDetail__description">{`Especie: ${props.character.species}`}</p>
+          <p className="cardDetail__description">{`Nombres alternativos: ${props.character.alternative_names}`}</p>
+        </section>
       </article>
     </section>
   );

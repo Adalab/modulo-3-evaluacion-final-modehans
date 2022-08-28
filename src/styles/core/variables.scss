@@ -1,17 +1,10 @@
 $fontHarry: 'Harry Potter', sans-serif;
 $fontSimple: 'Roboto', sans-serif;
-$fontLiminari: 'Luminaria', 'Roboto', sans-serif;
 $colorGold: #b28405;
 $colorSilver: rgb(142, 134, 134);
 
 @font-face {
   font-family: 'Harry Potter';
   src: url('../../fonts/Harry-Potter.ttf') format('truetype');
-
-}
-
-@font-face {
-  font-family: 'Luminaria';
-  src: url('../../fonts/Luminaria.ttf') format('truetype');
 
 }

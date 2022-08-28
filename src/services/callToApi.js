@@ -1,4 +1,5 @@
 import newImage from '../images/HogwartsHouses.png';
+
 const callToApi = (userValue) => {
   return fetch(`http://hp-api.herokuapp.com/api/characters/${userValue}`)
     .then((response) => response.json())

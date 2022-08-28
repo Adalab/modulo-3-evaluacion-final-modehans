@@ -60,9 +60,11 @@ const App = () => {
   const dataPath = matchPath('/characterDetail/:id', pathname);
   console.log(dataPath);
   const characterId = dataPath !== null ? dataPath.params.id : null;
-  const characterSelect = dataCharacters.find(
-    (item) => item.id === parseInt(characterId)
-  );
+  const characterSelect = () => {
+    return dataCharacters.find((item) => item.id === parseInt(characterId));
+  };
+
+  console.log('Select', characterSelect);
 
   return (
     <div className="container">
@@ -86,7 +88,7 @@ const App = () => {
 
           <Route
             path="/characterDetail/:id"
-            element={<CharacterDetail character={characterSelect} />}
+            element={<CharacterDetail character={characterSelect()} />}
           />
         </Routes>
       </main>
