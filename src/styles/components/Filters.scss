@@ -1,0 +1,25 @@
+@import '../core/variables.scss';
+
+.formFilter {
+  width: 100%;
+  min-height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__label {
+    margin: 1em;
+    line-height: 2em;
+  }
+
+  &__input {
+    color: $colorGold;
+    border: 1px $colorGold solid;
+  }
+
+  &__select {
+
+    color: $colorGold;
+    border: 1px $colorGold solid;
+  }
+}

@@ -1,20 +1,10 @@
 @import '../core/variables.scss';
 
 .cards {
+  width: 100%;
   display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1em;
+  justify-items: center;
 
-  @media (min-width: 600px) {
-
-    grid-template-columns: 1fr 1fr;
-
-  }
-
-  @media (min-width: 800px) {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  @media (min-width: 1000px) {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
 }

@@ -2,15 +2,21 @@
 
 .card {
   background-color: $colorGold;
+  width: 200px;
+  min-height: 300px;
+  box-shadow: -1px 0 0.4em rgb(57, 55, 55);
+
 
   &__img {
-    width: 200px;
-    height: 250px;
+    width: 180px;
+    height: 220px;
+    display: block;
     object-fit: cover;
+    margin: 1em auto;
+    border-radius: 10px;
   }
 
   &__title {
-    line-height: 2em;
     color: white;
     text-align: center;
     text-transform: capitalize;
@@ -18,13 +24,10 @@
   }
 
   &__description {
-    line-height: 2em;
     color: white;
     text-align: center;
     font-size: 14px;
     text-transform: capitalize;
-
   }
-
 
 }
