@@ -1,9 +1,9 @@
+import newImage from '../images/HogwartsHouses.png';
 const callToApi = (userValue) => {
   return fetch(`http://hp-api.herokuapp.com/api/characters/${userValue}`)
     .then((response) => response.json())
     .then((response) => {
       const data = response.map((item, index) => {
-        let newImage = `https://via.placeholder.com/256x256/816f9f/000000/?text=${item.name}`;
         return {
           id: index,
           image: item.image === '' ? newImage : item.image,

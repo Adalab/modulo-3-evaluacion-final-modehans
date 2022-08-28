@@ -1,4 +1,5 @@
 import CharacterCard from './CharacterCard';
+
 import '../styles/components/CharactersList.scss';
 
 const CharactersList = (props) => {

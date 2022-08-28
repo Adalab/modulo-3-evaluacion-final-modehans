@@ -8,17 +8,21 @@ import localStorage from '../services/localStorage';
 import Header from './Header';
 import CharactersList from './CharactersList';
 import Filters from './Filters';
+import Loader from './Loader';
 
 const App = () => {
   const [dataCharacters, setDataCharacters] = useState([]);
   const [userFilterName, setUserFilterName] = useState('');
   const [userFilterHouse, setUserFilterHouse] = useState('house/gryffindor');
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    setIsLoading(true);
     callToApi(userFilterHouse).then((dataApi) => {
       setDataCharacters(dataApi);
+      setIsLoading(false);
     });
-  }, [dataCharacters]);
+  }, [userFilterHouse]);
 
   const handleFilterName = (inputValue) => {
     setUserFilterName(inputValue);
@@ -43,6 +47,12 @@ const App = () => {
       return 0;
     });
 
+  const renderLoadOrCharacters = isLoading ? (
+    <Loader />
+  ) : (
+    <CharactersList dataCharacters={dataUser} />
+  );
+
   return (
     <div className="container">
       <Header />
@@ -57,7 +67,7 @@ const App = () => {
                 userFilterHouse={userFilterHouse}
                 handleFilterHouse={handleFilterHouse}
               />
-              <CharactersList dataCharacters={dataUser} />
+              {renderLoadOrCharacters}
             </main>
           }
         />
