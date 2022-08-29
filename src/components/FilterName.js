@@ -6,14 +6,14 @@ const FilterName = (props) => {
   return (
     <div>
       <label className="formFilter__label" htmlFor="name">
-        Filtrar por nombre
+        Filtrar por nombre:
       </label>
       <input
         className="formFilter__input"
         type="text"
         name="name"
         id="name"
-        placeholder="Minerva McGonagall"
+        placeholder="Escribe un nombre"
         value={props.userFilterName}
         onChange={handleChangeInput}
       ></input>

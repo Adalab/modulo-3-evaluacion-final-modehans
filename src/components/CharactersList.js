@@ -7,7 +7,7 @@ const CharactersList = (props) => {
     return <CharacterCard character={character} key={character.id} />;
   });
 
-  return <ul className="cards">{renderCharacters}</ul>;
+  return <ul className="cardsList">{renderCharacters}</ul>;
 };
 
 export default CharactersList;

@@ -84,7 +84,7 @@ const App = () => {
   //console.log('Select', characterSelect);
 
   return (
-    <div className="container">
+    <>
       <Header />
       <main className="main">
         <Routes>
@@ -115,7 +115,7 @@ const App = () => {
           />
         </Routes>
       </main>
-    </div>
+    </>
   );
 };
 

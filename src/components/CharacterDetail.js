@@ -12,8 +12,8 @@ const CharacterDetail = (props) => {
   const colorOfHouse = character.house.toLowerCase();
   console.log(colorOfHouse);
   return (
-    <section className="sectionCardDetail">
-      <Link to={'/'} className="sectionCardDetail__link">
+    <>
+      <Link to={'/'} className="link">
         Volver
       </Link>
       <article className={`cardDetail ${colorOfHouse}`}>
@@ -35,7 +35,7 @@ const CharacterDetail = (props) => {
           <p className="cardDetail__description">{`Nombres alternativos: ${character.alternative_names}`}</p>
         </section>
       </article>
-    </section>
+    </>
   );
 };
 
