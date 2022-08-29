@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { Routes, Route, matchPath, useLocation } from 'react-router-dom';
 
 import callToApi from '../services/callToApi';
-import localStorage from '../services/localStorage';
 
 import Header from './Header';
 import Filters from './Filters';
@@ -18,23 +17,35 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    console.log('useEffect1');
     setIsLoading(true);
-    callToApi(userFilterHouse).then((dataApi) => {
-      setDataCharacters(dataApi);
+    if (sessionStorage.getItem(userFilterHouse) !== null) {
+      setDataCharacters(JSON.parse(sessionStorage.getItem(userFilterHouse)));
       setIsLoading(false);
-    });
+    } else {
+      callToApi(userFilterHouse).then((dataApi) => {
+        setDataCharacters(dataApi);
+        sessionStorage.setItem(userFilterHouse, JSON.stringify(dataApi));
+        setIsLoading(false);
+        console.log('fetch 1');
+      });
+    }
   }, [userFilterHouse]);
 
   const handleFilterName = (inputValue) => {
+    console.log('Name');
     setUserFilterName(inputValue);
   };
 
   const handleFilterHouse = (inputValue) => {
+    console.log('House');
     setUserFilterHouse(inputValue);
   };
 
   const dataUser = dataCharacters
+
     .filter((item) => {
+      console.log('Filtrado');
       return item.name
         .toLowerCase()
         .includes(userFilterName.toLocaleLowerCase());
@@ -66,6 +77,7 @@ const App = () => {
   };
 */
   const findCharacter = (characterId) => {
+    console.log('Encontrado');
     return dataCharacters.find((item) => item.id === parseInt(characterId));
   };
 
