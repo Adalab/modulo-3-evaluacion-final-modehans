@@ -54,17 +54,22 @@ const App = () => {
   ) : (
     <CharactersList dataCharacters={dataUser} />
   );
-
+  /*
   const { pathname } = useLocation();
   console.log(pathname);
-  const dataPath = matchPath('/characterDetail/:id', pathname);
-  console.log(dataPath);
-  const characterId = dataPath !== null ? dataPath.params.id : null;
+
   const characterSelect = () => {
+    const dataPath = matchPath('/characterDetail/:id', pathname);
+    console.log(dataPath);
+    const characterId = dataPath !== null ? dataPath.params.id : null;
+    return dataCharacters.find((item) => item.id === parseInt(characterId));
+  };
+*/
+  const findCharacter = (characterId) => {
     return dataCharacters.find((item) => item.id === parseInt(characterId));
   };
 
-  console.log('Select', characterSelect);
+  //console.log('Select', characterSelect);
 
   return (
     <div className="container">
@@ -88,7 +93,13 @@ const App = () => {
 
           <Route
             path="/characterDetail/:id"
-            element={<CharacterDetail character={characterSelect()} />}
+            element={
+              <CharacterDetail
+                findCharacter={
+                  findCharacter
+                } /* selectCharacter={characterSelect} */
+              />
+            }
           />
         </Routes>
       </main>
