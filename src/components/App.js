@@ -1,6 +1,6 @@
 import '../styles/App.scss';
 import { useEffect, useState } from 'react';
-import { Routes, Route, matchPath, useLocation } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import callToApi from '../services/callToApi';
 
@@ -17,7 +17,6 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    console.log('useEffect1');
     setIsLoading(true);
     if (sessionStorage.getItem(userFilterHouse) !== null) {
       setDataCharacters(JSON.parse(sessionStorage.getItem(userFilterHouse)));
@@ -27,25 +26,21 @@ const App = () => {
         setDataCharacters(dataApi);
         sessionStorage.setItem(userFilterHouse, JSON.stringify(dataApi));
         setIsLoading(false);
-        console.log('fetch 1');
       });
     }
   }, [userFilterHouse]);
 
   const handleFilterName = (inputValue) => {
-    console.log('Name');
     setUserFilterName(inputValue);
   };
 
   const handleFilterHouse = (inputValue) => {
-    console.log('House');
     setUserFilterHouse(inputValue);
   };
 
   const dataUser = dataCharacters
 
     .filter((item) => {
-      console.log('Filtrado');
       return item.name
         .toLowerCase()
         .includes(userFilterName.toLocaleLowerCase());
@@ -57,23 +52,10 @@ const App = () => {
   ) : (
     <CharactersList dataCharacters={dataUser} />
   );
-  /*
-  const { pathname } = useLocation();
-  console.log(pathname);
 
-  const characterSelect = () => {
-    const dataPath = matchPath('/characterDetail/:id', pathname);
-    console.log(dataPath);
-    const characterId = dataPath !== null ? dataPath.params.id : null;
-    return dataCharacters.find((item) => item.id === parseInt(characterId));
-  };
-*/
   const findCharacter = (characterId) => {
-    console.log('Encontrado');
     return dataCharacters.find((item) => item.id === parseInt(characterId));
   };
-
-  //console.log('Select', characterSelect);
 
   return (
     <>
@@ -97,13 +79,7 @@ const App = () => {
 
           <Route
             path="/characterDetail/:id"
-            element={
-              <CharacterDetail
-                findCharacter={
-                  findCharacter
-                } /* selectCharacter={characterSelect} */
-              />
-            }
+            element={<CharacterDetail findCharacter={findCharacter} />}
           />
         </Routes>
       </main>

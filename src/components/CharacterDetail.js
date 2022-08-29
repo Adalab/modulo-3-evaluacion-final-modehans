@@ -3,14 +3,20 @@ import { Link, useParams } from 'react-router-dom';
 import '../styles/components/CharacterDetail.scss';
 
 const CharacterDetail = (props) => {
-  //const character = props.selectCharacter();
   const { id } = useParams();
   const character = props.findCharacter(id);
   if (character == null) {
-    return <p>No encontrado</p>;
+    return (
+      <>
+        <p className="error">Personaje No Encontrado</p>
+        <Link to={'/'} className="error">
+          Pulsa aquí para volver a página principal
+        </Link>
+      </>
+    );
   }
   const colorOfHouse = character.house.toLowerCase();
-  console.log(colorOfHouse);
+
   return (
     <>
       <Link to={'/'} className="link">
