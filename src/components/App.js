@@ -50,15 +50,7 @@ const App = () => {
         .toLowerCase()
         .includes(userFilterName.toLocaleLowerCase());
     })
-    .sort((a, b) => {
-      if (a.name > b.name) {
-        return 1;
-      }
-      if (a.name < b.name) {
-        return -1;
-      }
-      return 0;
-    });
+    .sort((a, b) => (a.name > b.name ? 1 : a.name < b.name ? -1 : 0));
 
   const renderLoadOrCharacters = isLoading ? (
     <Loader />
