@@ -13,7 +13,7 @@ const callToApi = (userValue) => {
           alive: item.alive,
           gender: item.gender,
           species: item.species,
-          alternate_names: item.alternate_names,
+          alternate_names: item.alternate_names.join('-'),
         };
       });
       return data;

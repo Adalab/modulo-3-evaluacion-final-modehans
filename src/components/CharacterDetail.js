@@ -38,7 +38,7 @@ const CharacterDetail = (props) => {
           }`}</p>
           <p className="cardDetail__description">{`Género: ${character.gender}`}</p>
           <p className="cardDetail__description">{`Especie: ${character.species}`}</p>
-          <p className="cardDetail__description">{`Nombres alternativos: ${character.alternative_names}`}</p>
+          <p className="cardDetail__description">{`Nombres alternativos: ${character.alternate_names}`}</p>
         </section>
       </article>
     </>
