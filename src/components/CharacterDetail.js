@@ -5,7 +5,6 @@ import NoExist from './NoExist';
 
 const CharacterDetail = (props) => {
   const { house, id } = useParams();
-  console.log({ house, id });
   const character = props.findCharacter(id, house);
 
   if (!character) {

@@ -3,7 +3,7 @@ import CharacterCard from './CharacterCard';
 import '../styles/components/CharactersList.scss';
 
 const CharactersList = (props) => {
-  console.log('render', props.dataCharacters);
+  'render', props.dataCharacters;
   if (props.dataCharacters.length === 0) {
     return <p>Personaje {props.userNameFilter} No Existe</p>;
   } else {
