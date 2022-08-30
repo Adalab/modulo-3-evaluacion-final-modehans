@@ -1,11 +1,11 @@
-import CharacterCard from './CharacterCard';
-
 import '../styles/components/CharactersList.scss';
 
+import CharacterCard from './CharacterCard';
+import NoExist from './NoExist';
+
 const CharactersList = (props) => {
-  'render', props.dataCharacters;
   if (props.dataCharacters.length === 0) {
-    return <p>Personaje {props.userNameFilter} No Existe</p>;
+    return <NoExist>{props.userNameFilter}</NoExist>;
   } else {
     const renderCharacters = props.dataCharacters.map((character) => {
       return <CharacterCard character={character} key={character.id} />;
