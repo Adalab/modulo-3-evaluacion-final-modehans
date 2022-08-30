@@ -1,20 +1,15 @@
-import { Link, useParams } from 'react-router-dom';
-
 import '../styles/components/CharacterDetail.scss';
+
+import { useParams, Link } from 'react-router-dom';
+import NoExist from './NoExist';
 
 const CharacterDetail = (props) => {
   const { house, id } = useParams();
   console.log({ house, id });
   const character = props.findCharacter(id, house);
+
   if (!character) {
-    return (
-      <>
-        <p className="error">Personaje No Encontrado</p>
-        <Link to={'/'} className="error">
-          Pulsa aquí para volver a página principal
-        </Link>
-      </>
-    );
+    return <NoExist />;
   }
   const colorOfHouse = character.house.toLowerCase();
 
