@@ -8,7 +8,9 @@ import sessionStorage from '../services/sessionStorage';
 import Header from './Header';
 import Filters from './Filters';
 import CharacterDetail from './CharacterDetail';
-import ShowFiltersResults from './ShowFiltersResults';
+import CharactersList from './CharactersList';
+import ShowLoading from './ShowLoading';
+
 import InvalidRoute from './InvalidRoute';
 
 const App = () => {
@@ -72,7 +74,9 @@ const App = () => {
                   userHouseFilter={userHouseFilter}
                   handleHouseFilter={handleHouseFilter}
                 />
-                <ShowFiltersResults isLoading={isLoading} dataUser={dataUser} />
+                <ShowLoading isLoading={isLoading}>
+                  <CharactersList dataCharacters={dataUser} />
+                </ShowLoading>
               </>
             }
           />
