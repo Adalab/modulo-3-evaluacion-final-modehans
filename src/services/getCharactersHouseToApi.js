@@ -6,7 +6,7 @@ const getCharactersHouseToApi = (userValue) => {
     .then((response) => {
       const data = response.map((item, index) => {
         return {
-          id: index,
+          id: `${item.name.toLowerCase().replace(' ', '-')}-${index}`,
           image: item.image === '' ? newImage : item.image,
           name: item.name,
           house: item.house === '' ? 'Sin casa' : item.house,

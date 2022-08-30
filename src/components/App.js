@@ -9,6 +9,7 @@ import Header from './Header';
 import Filters from './Filters';
 import CharacterDetail from './CharacterDetail';
 import ShowFiltersResults from './ShowFiltersResults';
+import InvalidRoute from './InvalidRoute';
 
 const App = () => {
   const [dataCharacters, setDataCharacters] = useState([]);
@@ -17,7 +18,6 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    console.log('useEffect1');
     setIsLoading(true);
     if (sessionStorage.get(userHouseFilter) !== null) {
       setDataCharacters(JSON.parse(sessionStorage.get(userHouseFilter)));
@@ -27,7 +27,6 @@ const App = () => {
         setDataCharacters(dataApi);
         sessionStorage.set(userHouseFilter, dataApi);
         setIsLoading(false);
-        console.log('fetch 1');
       });
     }
   }, [userHouseFilter]);
@@ -49,8 +48,13 @@ const App = () => {
     })
     .sort((a, b) => (a.name > b.name ? 1 : a.name < b.name ? -1 : 0));
 
-  const findCharacter = (characterId) => {
-    return dataCharacters.find((item) => item.id === parseInt(characterId));
+  const findCharacter = (characterId, characterHouse) => {
+    if (characterHouse === 'Sin casa') {
+      setUserHouseFilter('');
+    } else if (characterHouse !== 'Griffindor') {
+      setUserHouseFilter(`house/${characterHouse}`);
+    }
+    return dataCharacters.find((item) => item.id === characterId);
   };
 
   return (
@@ -74,9 +78,10 @@ const App = () => {
           />
 
           <Route
-            path="/characterDetail/:id"
+            path="/characterDetail/:house/:id"
             element={<CharacterDetail findCharacter={findCharacter} />}
           />
+          <Route path="*" element={<InvalidRoute />} />
         </Routes>
       </main>
     </>

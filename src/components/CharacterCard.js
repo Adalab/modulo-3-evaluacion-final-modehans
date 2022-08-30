@@ -3,7 +3,9 @@ import '../styles/components/CharacterCard.scss';
 const CharacterCard = (props) => {
   return (
     <li className="card">
-      <Link to={`/characterDetail/${props.character.id}`}>
+      <Link
+        to={`/characterDetail/${props.character.house}/${props.character.id}`}
+      >
         <img
           className="card__img"
           src={props.character.image}

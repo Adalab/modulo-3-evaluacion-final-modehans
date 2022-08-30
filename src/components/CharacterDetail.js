@@ -3,9 +3,10 @@ import { Link, useParams } from 'react-router-dom';
 import '../styles/components/CharacterDetail.scss';
 
 const CharacterDetail = (props) => {
-  const { id } = useParams();
-  const character = props.findCharacter(id);
-  if (character == null) {
+  const { house, id } = useParams();
+  console.log({ house, id });
+  const character = props.findCharacter(id, house);
+  if (!character) {
     return (
       <>
         <p className="error">Personaje No Encontrado</p>
