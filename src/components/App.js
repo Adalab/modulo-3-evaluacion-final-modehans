@@ -6,9 +6,8 @@ import callToApi from '../services/callToApi';
 
 import Header from './Header';
 import Filters from './Filters';
-import CharactersList from './CharactersList';
 import CharacterDetail from './CharacterDetail';
-import Loader from './Loader';
+import ShowFiltersResults from './ShowFiltersResults';
 
 const App = () => {
   const [dataCharacters, setDataCharacters] = useState([]);
@@ -47,12 +46,6 @@ const App = () => {
     })
     .sort((a, b) => (a.name > b.name ? 1 : a.name < b.name ? -1 : 0));
 
-  const renderLoadOrCharacters = isLoading ? (
-    <Loader />
-  ) : (
-    <CharactersList dataCharacters={dataUser} />
-  );
-
   const findCharacter = (characterId) => {
     return dataCharacters.find((item) => item.id === parseInt(characterId));
   };
@@ -72,7 +65,7 @@ const App = () => {
                   userHouseFilter={userHouseFilter}
                   handleHouseFilter={handleHouseFilter}
                 />
-                {renderLoadOrCharacters}
+                <ShowFiltersResults isLoading={isLoading} dataUser={dataUser} />
               </>
             }
           />
