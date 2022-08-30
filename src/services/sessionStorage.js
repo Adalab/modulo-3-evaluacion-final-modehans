@@ -1,10 +1,5 @@
-const get = (key, defaultValue) => {
-  const sessionStorageData = sessionStorage.getItem(key);
-  if (sessionStorageData === null) {
-    return defaultValue;
-  } else {
-    return JSON.parse(sessionStorageData);
-  }
+const get = (key) => {
+  return sessionStorage.getItem(key);
 };
 
 const set = (key, value) => {

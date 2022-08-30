@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import getCharactersHouseToApi from '../services/getCharactersHouseToApi';
+import sessionStorage from '../services/sessionStorage';
 
 import Header from './Header';
 import Filters from './Filters';
@@ -18,13 +19,13 @@ const App = () => {
   useEffect(() => {
     console.log('useEffect1');
     setIsLoading(true);
-    if (sessionStorage.getItem(userHouseFilter) !== null) {
-      setDataCharacters(JSON.parse(sessionStorage.getItem(userHouseFilter)));
+    if (sessionStorage.get(userHouseFilter) !== null) {
+      setDataCharacters(JSON.parse(sessionStorage.get(userHouseFilter)));
       setIsLoading(false);
     } else {
       getCharactersHouseToApi(userHouseFilter).then((dataApi) => {
         setDataCharacters(dataApi);
-        sessionStorage.setItem(userHouseFilter, JSON.stringify(dataApi));
+        sessionStorage.set(userHouseFilter, dataApi);
         setIsLoading(false);
         console.log('fetch 1');
       });
