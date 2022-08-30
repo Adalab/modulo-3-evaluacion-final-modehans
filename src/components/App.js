@@ -2,7 +2,8 @@ import '../styles/App.scss';
 import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import callToApi from '../services/callToApi';
+import getCharactersHouseToApi from '../services/getCharactersHouseToApi';
+import sessionStorage from '../services/sessionStorage';
 
 import Header from './Header';
 import Filters from './Filters';
@@ -21,9 +22,9 @@ const App = () => {
       setDataCharacters(JSON.parse(sessionStorage.getItem(userHouseFilter)));
       setIsLoading(false);
     } else {
-      callToApi(userHouseFilter).then((dataApi) => {
+      getCharactersHouseToApi(userHouseFilter).then((dataApi) => {
         setDataCharacters(dataApi);
-        sessionStorage.setItem(userHouseFilter, JSON.stringify(dataApi));
+        sessionStorage.set(userHouseFilter, dataApi);
         setIsLoading(false);
       });
     }

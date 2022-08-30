@@ -1,6 +1,6 @@
 import newImage from '../images/HogwartsHouses.png';
 
-const callToApi = (userValue) => {
+const getCharactersHouseToApi = (userValue) => {
   return fetch(`http://hp-api.herokuapp.com/api/characters/${userValue}`)
     .then((response) => response.json())
     .then((response) => {
@@ -20,4 +20,4 @@ const callToApi = (userValue) => {
     });
 };
 
-export default callToApi;
+export default getCharactersHouseToApi;
