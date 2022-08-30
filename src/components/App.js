@@ -75,7 +75,10 @@ const App = () => {
                   handleHouseFilter={handleHouseFilter}
                 />
                 <ShowLoading isLoading={isLoading}>
-                  <CharactersList dataCharacters={dataUser} />
+                  <CharactersList
+                    dataCharacters={dataUser}
+                    userNameFilter={userNameFilter}
+                  />
                 </ShowLoading>
               </>
             }
