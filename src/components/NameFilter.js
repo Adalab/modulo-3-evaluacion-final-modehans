@@ -1,6 +1,6 @@
-const FilterName = (props) => {
+const NameFilter = (props) => {
   const handleChangeInput = (ev) => {
-    props.handleFilterName(ev.target.value);
+    props.handleNameFilter(ev.target.value);
   };
 
   return (
@@ -14,11 +14,11 @@ const FilterName = (props) => {
         name="name"
         id="name"
         placeholder="Escribe un nombre"
-        value={props.userFilterName}
+        value={props.userNameFilter}
         onChange={handleChangeInput}
       ></input>
     </div>
   );
 };
 
-export default FilterName;
+export default NameFilter;

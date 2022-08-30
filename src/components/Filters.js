@@ -1,6 +1,6 @@
 import '../styles/components/Filters.scss';
-import FilterName from './FilterName';
-import FilterHouse from './FilterHouse';
+import NameFilter from './NameFilter';
+import HouseFilter from './HouseFilter';
 
 function Filters(props) {
   const handleSubmit = (ev) => {
@@ -8,13 +8,13 @@ function Filters(props) {
   };
   return (
     <form className="formFilter" onSubmit={handleSubmit}>
-      <FilterName
-        userFilterName={props.userFilterName}
-        handleFilterName={props.handleFilterName}
+      <NameFilter
+        userNameFilter={props.userNameFilter}
+        handleNameFilter={props.handleNameFilter}
       />
-      <FilterHouse
-        userFilterHouse={props.userFilterHouse}
-        handleFilterHouse={props.handleFilterHouse}
+      <HouseFilter
+        userHouseFilter={props.userHouseFilter}
+        handleHouseFilter={props.handleHouseFilter}
       />
     </form>
   );

@@ -1,6 +1,6 @@
-const FilterHouse = (props) => {
+const HouseFilter = (props) => {
   const handleChange = (ev) => {
-    props.handleFilterHouse(ev.currentTarget.value);
+    props.handleHouseFilter(ev.currentTarget.value);
   };
   return (
     <div>
@@ -11,7 +11,7 @@ const FilterHouse = (props) => {
         className="formFilter__select"
         name="house"
         id="house"
-        value={props.userFilterHouse}
+        value={props.userHouseFilter}
         onChange={handleChange}
         required
       >
@@ -24,4 +24,4 @@ const FilterHouse = (props) => {
     </div>
   );
 };
-export default FilterHouse;
+export default HouseFilter;

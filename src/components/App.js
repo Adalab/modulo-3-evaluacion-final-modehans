@@ -12,30 +12,30 @@ import Loader from './Loader';
 
 const App = () => {
   const [dataCharacters, setDataCharacters] = useState([]);
-  const [userFilterName, setUserFilterName] = useState('');
-  const [userFilterHouse, setUserFilterHouse] = useState('house/gryffindor');
+  const [userNameFilter, setUserNameFilter] = useState('');
+  const [userHouseFilter, setUserHouseFilter] = useState('house/gryffindor');
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     setIsLoading(true);
-    if (sessionStorage.getItem(userFilterHouse) !== null) {
-      setDataCharacters(JSON.parse(sessionStorage.getItem(userFilterHouse)));
+    if (sessionStorage.getItem(userHouseFilter) !== null) {
+      setDataCharacters(JSON.parse(sessionStorage.getItem(userHouseFilter)));
       setIsLoading(false);
     } else {
-      callToApi(userFilterHouse).then((dataApi) => {
+      callToApi(userHouseFilter).then((dataApi) => {
         setDataCharacters(dataApi);
-        sessionStorage.setItem(userFilterHouse, JSON.stringify(dataApi));
+        sessionStorage.setItem(userHouseFilter, JSON.stringify(dataApi));
         setIsLoading(false);
       });
     }
-  }, [userFilterHouse]);
+  }, [userHouseFilter]);
 
-  const handleFilterName = (inputValue) => {
-    setUserFilterName(inputValue);
+  const handleNameFilter = (inputValue) => {
+    setUserNameFilter(inputValue);
   };
 
-  const handleFilterHouse = (inputValue) => {
-    setUserFilterHouse(inputValue);
+  const handleHouseFilter = (inputValue) => {
+    setUserHouseFilter(inputValue);
   };
 
   const dataUser = dataCharacters
@@ -43,7 +43,7 @@ const App = () => {
     .filter((item) => {
       return item.name
         .toLowerCase()
-        .includes(userFilterName.toLocaleLowerCase());
+        .includes(userNameFilter.toLocaleLowerCase());
     })
     .sort((a, b) => (a.name > b.name ? 1 : a.name < b.name ? -1 : 0));
 
@@ -67,10 +67,10 @@ const App = () => {
             element={
               <>
                 <Filters
-                  userFilterName={userFilterName}
-                  handleFilterName={handleFilterName}
-                  userFilterHouse={userFilterHouse}
-                  handleFilterHouse={handleFilterHouse}
+                  userNameFilter={userNameFilter}
+                  handleNameFilter={handleNameFilter}
+                  userHouseFilter={userHouseFilter}
+                  handleHouseFilter={handleHouseFilter}
                 />
                 {renderLoadOrCharacters}
               </>
