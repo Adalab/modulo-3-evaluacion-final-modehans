@@ -1,6 +1,7 @@
 import '../styles/components/Filters.scss';
 import NameFilter from './NameFilter';
 import HouseFilter from './HouseFilter';
+import NamesAlternariveFilter from './NamesAlternariveFilter';
 
 function Filters(props) {
   const handleSubmit = (ev) => {
@@ -15,6 +16,10 @@ function Filters(props) {
       <HouseFilter
         userHouseFilter={props.userHouseFilter}
         handleHouseFilter={props.handleHouseFilter}
+      />
+      <NamesAlternariveFilter
+        handleAlternativeNamesFilter={props.handleAlternativeNamesFilter}
+        userNumberAternativeNames={props.userNumberAternativeNames}
       />
     </form>
   );

@@ -17,6 +17,8 @@ const App = () => {
   const [dataCharacters, setDataCharacters] = useState([]);
   const [userNameFilter, setUserNameFilter] = useState('');
   const [userHouseFilter, setUserHouseFilter] = useState('house/gryffindor');
+  const [userNumberAternativeNames, setUserNamberAlternativeNames] =
+    useState(0);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -41,12 +43,21 @@ const App = () => {
     setUserHouseFilter(inputValue);
   };
 
-  const dataUser = dataCharacters
+  const handleAlternativeNamesFilter = (inputValue) => {
+    setUserNamberAlternativeNames(inputValue);
+  };
 
+  const dataUser = dataCharacters
     .filter((item) => {
       return item.name
         .toLowerCase()
         .includes(userNameFilter.toLocaleLowerCase());
+    })
+    .filter((item) => {
+      return (
+        item.alternativeNames_size.length ===
+        parseInt(userNumberAternativeNames)
+      );
     })
     .sort((a, b) => (a.name > b.name ? 1 : a.name < b.name ? -1 : 0));
 
@@ -73,6 +84,8 @@ const App = () => {
                   handleNameFilter={handleNameFilter}
                   userHouseFilter={userHouseFilter}
                   handleHouseFilter={handleHouseFilter}
+                  userNumberAternativeNames={userNumberAternativeNames}
+                  handleAlternativeNamesFilter={handleAlternativeNamesFilter}
                 />
                 <ShowLoading isLoading={isLoading}>
                   <CharactersList

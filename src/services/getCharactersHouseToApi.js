@@ -14,6 +14,7 @@ const getCharactersHouseToApi = (userValue) => {
           gender: item.gender,
           species: item.species,
           alternate_names: item.alternate_names.join('-'),
+          alternativeNames_size: item.alternate_names,
         };
       });
       return data;
