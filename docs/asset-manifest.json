@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "./static/css/main.126c7009.css",
-    "main.js": "./static/js/main.bea42d4a.js",
+    "main.js": "./static/js/main.ca929e59.js",
     "static/media/HogwartsHouses.png": "./static/media/HogwartsHouses.357328ba91512d8ea37e.png",
     "static/media/Harry-Potter.ttf": "./static/media/Harry-Potter.a65869c0c1a4b3d4fcfc.ttf",
     "index.html": "./index.html",
     "main.126c7009.css.map": "./static/css/main.126c7009.css.map",
-    "main.bea42d4a.js.map": "./static/js/main.bea42d4a.js.map"
+    "main.ca929e59.js.map": "./static/js/main.ca929e59.js.map"
   },
   "entrypoints": [
     "static/css/main.126c7009.css",
-    "static/js/main.bea42d4a.js"
+    "static/js/main.ca929e59.js"
   ]
 }
