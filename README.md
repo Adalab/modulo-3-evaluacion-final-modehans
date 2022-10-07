@@ -68,7 +68,7 @@ Un extra interesante sería añadir un boton de reset para que la página vuelva
 ## Instalación por primera vez del proyecto
 
 1. Descargar el repositorio
-   > git colone https://github.com/Adalab/modulo-3-evaluacion-final-modehans
+   > git colone https://github.com/modehans/buscador-personajes-harry-potter.git
 2. Abrir una terminal
 3. Instalar las dependencias
    > npm instal
