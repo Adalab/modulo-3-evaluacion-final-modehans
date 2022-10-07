@@ -13,7 +13,10 @@ const getCharactersHouseToApi = (userValue) => {
           alive: item.alive,
           gender: item.gender,
           species: item.species,
-          alternate_names: item.alternate_names.join('-'),
+          alternate_names:
+            item.alternate_names.length === 0
+              ? 'Sin nombres alternativos'
+              : item.alternate_names.join('-'),
         };
       });
       return data;
