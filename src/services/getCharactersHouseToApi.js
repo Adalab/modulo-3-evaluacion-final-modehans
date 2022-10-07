@@ -16,7 +16,7 @@ const getCharactersHouseToApi = (userValue) => {
           alternate_names:
             item.alternate_names.length === 0
               ? 'Sin nombres alternativos'
-              : item.alternate_names.join(', '),
+              : item.alternate_names.join('-'),
         };
       });
       return data;
