@@ -9,7 +9,11 @@ const CharacterDetail = (props) => {
   const character = props.findCharacter(id, house);
 
   if (!character) {
-    return <NoExist />;
+    return (
+      <NoExist>
+        <p>{`Personaje No Encontrado`}</p>
+      </NoExist>
+    );
   }
   const colorOfHouse = character.house.toLowerCase();
 

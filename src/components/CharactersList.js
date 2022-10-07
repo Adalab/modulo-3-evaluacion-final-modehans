@@ -5,7 +5,7 @@ import '../styles/components/CharactersList.scss';
 const CharactersList = (props) => {
   console.log('render', props.dataCharacters);
   if (props.dataCharacters.length === 0) {
-    return <p>Personaje {props.userNameFilter} No Existe</p>;
+    return <p className="error">Personaje {props.userNameFilter} No Existe</p>;
   } else {
     const renderCharacters = props.dataCharacters.map((character) => {
       return <CharacterCard character={character} key={character.id} />;

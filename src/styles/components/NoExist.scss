@@ -1,0 +1,16 @@
+@import '../core/variables.scss';
+
+.link {
+  color: white;
+}
+
+.error {
+  margin: auto;
+  font-family: $fontHarry;
+  font-size: 2em;
+  text-shadow: 1px 1px 1px black;
+  letter-spacing: 3px;
+  color: white;
+  text-align: center;
+
+}

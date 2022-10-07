@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom';
-
-const NoExist = () => {
+import '../styles/components/NoExist.scss';
+const NoExist = (props) => {
   return (
-    <>
-      <p className="error">{`Personaje No Encontrado`}</p>
-      <Link to={'/'} className="error">
+    <section className="error">
+      {props.children}
+      <Link className="link" to={'/'}>
         Pulsa aquí para volver a página principal
       </Link>
-    </>
+    </section>
   );
 };
 export default NoExist;

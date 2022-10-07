@@ -11,7 +11,7 @@ import CharacterDetail from './CharacterDetail';
 import CharactersList from './CharactersList';
 import ShowLoading from './ShowLoading';
 
-import InvalidRoute from './InvalidRoute';
+import NoExist from './NoExist';
 
 const App = () => {
   const [dataCharacters, setDataCharacters] = useState([]);
@@ -88,7 +88,14 @@ const App = () => {
             path="/characterDetail/:house/:id"
             element={<CharacterDetail findCharacter={findCharacter} />}
           />
-          <Route path="*" element={<InvalidRoute />} />
+          <Route
+            path="*"
+            element={
+              <NoExist>
+                <p>{`Ruta no valida`}</p>
+              </NoExist>
+            }
+          />
         </Routes>
       </main>
     </>
