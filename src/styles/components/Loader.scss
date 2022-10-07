@@ -1,15 +1,6 @@
 @import '../core/variables.scss';
+@import '../core/reset.scss';
 
-:root {
-  --scar: #eeba32;
-  --glasses: #020000;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 .containerLoader {
   display: flex;
@@ -22,33 +13,19 @@
 
 .canvas {
   position: relative;
-  justify-content: center;
-  align-items: center;
-  height: 50%;
 }
 
 .scar {
   position: absolute;
-  border-left: 1.2rem solid transparent;
-  border-right: 0.5rem solid transparent;
+  border-left: 1.5rem solid transparent;
   border-bottom: 5rem solid $colorGold;
 }
 
-.scar::after {
-  content: "";
-  position: absolute;
-  border-left: 1.4rem solid transparent;
-  border-right: 0.5rem solid transparent;
-  border-bottom: 18rem solid var(--bg);
-  top: -5rem;
-  left: -10rem;
-  transform: rotate(-3deg);
-}
 
 .s2 {
   top: 3.5rem;
   left: 0.95rem;
-  transform: scale(-1);
+  transform: rotate(180deg);
 }
 
 .scr {
@@ -87,24 +64,22 @@
   width: 10rem;
   height: 10rem;
   border-radius: 50%;
-  border: 0.3rem solid var(--glasses);
+  border: 0.3rem solid $colorBlack;
   top: 9.5rem;
 }
 
-.glasses-left::after {
-  content: "";
+.glasses-middle {
   position: absolute;
-  width: 5.9rem;
+  top: 36vh;
+  width: 6.2rem;
   height: 7rem;
   border: 0.3rem solid;
-  border-color: var(--glasses) transparent transparent transparent;
+  border-color: $colorBlack transparent transparent transparent;
   border-radius: 47% 47% 0 0/50% 50% 0 0;
-  top: 3.5rem;
-  left: 8.5rem;
 }
 
 .glasses-left {
-  left: -9rem;
+  left: -8.8rem;
 }
 
 .glasses-right {
