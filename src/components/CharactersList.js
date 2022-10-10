@@ -3,7 +3,6 @@ import CharacterCard from './CharacterCard';
 import '../styles/components/CharactersList.scss';
 
 const CharactersList = (props) => {
-  console.log('render', props.dataCharacters);
   if (props.dataCharacters.length === 0) {
     return (
       <p className="error">

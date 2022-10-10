@@ -1,0 +1,27 @@
+@import "../core/variables.scss";
+
+.footer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 2em;
+  background-color: $colorSilver;
+  color: white;
+  font-family: $fontHarry;
+
+
+
+  &__links {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}
+
+.fa-brands {
+  color: white;
+  list-style: none;
+  padding: 0 5px;
+}
