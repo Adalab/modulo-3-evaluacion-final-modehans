@@ -1,4 +1,4 @@
-# **Evaluación final módulo 2**
+# **Buscador de Personajes de Harry Potter**
 
 El ejercicio consiste en desarrollar una aplicación web de búsqueda de personajes de Harry Potter, que nos permite pulstar sobre ellas y abrir un tarjeta con más información.
 La API a la cual realizamos la petición es http://hp-api.herokuapp.com/api/characters/house/gryffindor.
