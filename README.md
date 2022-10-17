@@ -4,7 +4,7 @@ El ejercicio consiste en desarrollar una aplicación web de búsqueda de persona
 La API a la cual realizamos la petición es http://hp-api.herokuapp.com/api/characters/house/gryffindor.
 La información sobre la API se encuentra en el siguiente enlace https://hp-api.herokuapp.com/.
 El ejercicio también tiene una parte de maquetación con HTML y Sass.
-[Página de busqueda de series]()
+[Página de busqueda de personajes](https://modehans.github.io/buscador-personajes-harry-potter/)
 
 ## Peticiones del ejercicio:
 
