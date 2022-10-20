@@ -1,16 +1,15 @@
 # **Buscador de Personajes de Harry Potter**
 
-El ejercicio consiste en desarrollar una aplicación web de búsqueda de personajes de Harry Potter, que nos permite pulstar sobre ellas y abrir un tarjeta con más información.
+Aplicación web de búsqueda de personajes de Harry Potter, que nos permite pulstar sobre ellas y abrir un tarjeta con más información.
 La API a la cual realizamos la petición es http://hp-api.herokuapp.com/api/characters/house/gryffindor.
 La información sobre la API se encuentra en el siguiente enlace https://hp-api.herokuapp.com/.
-El ejercicio también tiene una parte de maquetación con HTML y Sass.
 [Página de busqueda de personajes](https://modehans.github.io/buscador-personajes-harry-potter/)
 
-## Peticiones del ejercicio:
+## Funcionamiento:
 
-1.  Crear estructura básica de HTML. Al cargar se ve un listado de personajes de la casa gryffindor, con foto, nombre y casa.
+1. Al iniciar la página se ve un listado de personajes de la casa gryffindor, con foto, nombre y casa.
 
-2.  Detectar cuando la imagen no es específica de la serie y sustituirla por una imagen de placeholder.com donde en la propia URL indicamos el tamaño, colores, texto.
+2.  
 
 3.  Filtrar por nombre.
 
@@ -71,7 +70,7 @@ Un extra interesante sería añadir un boton de reset para que la página vuelva
    > git colone https://github.com/modehans/buscador-personajes-harry-potter.git
 2. Abrir una terminal
 3. Instalar las dependencias
-   > npm instal
+   > npm install
 
 ## Arrancar el proyecto
 
