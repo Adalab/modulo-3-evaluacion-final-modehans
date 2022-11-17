@@ -5,8 +5,9 @@
   align-items: center;
   justify-content: center;
   background-color: $colorSilver;
-  height: 30vh;
-
+  min-height: 20vh;
+  max-height: 30vh;
+  padding: 1rem;
 
   &__title {
     font-family: $fontHarry;
